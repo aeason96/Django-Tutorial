@@ -1,20 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Musics</title>
-</head>
-<body>
-{% if all_albums %}
-    <ul>
-        {% for album in all_albums %}
-        <li>
-            <a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <h3>You don't have any albums</h3>
-{% endif %}
-</body>
-</html>
+{% extends 'music/base.html' %}
+{% block body %}
+    <div class="row">
+    {% for album in all_albums %}
+        <div class="col-sm-3">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" id="albumPreview">
+                    <img src="{{ album.album_logo }}" style="width: 100%"><br>
+                    <h3>{{ album.album_title }}</h3>
+                    <h4>{{ album.artist }}</h4>
+                    <div class="row albumActions">
+                        <div class="albumButton">
+                            <a href="{% url 'music:detail' album.id %}" class="btn btn-info" role="button">
+                                Details
+                            </a>
+                        </div>
+                        <div class="albumButton">
+                            <a href="#" class="btn btn-default" role="button">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <div class="albumButton">
+                            <a href="#" class="btn btn-default" role="button">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

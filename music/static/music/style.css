@@ -1,0 +1,26 @@
+body{
+    background: white url("images/paperBackground.jpg");
+}
+
+#albumPreview{
+    background: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.albumActions {
+    padding-left: 15px;
+}
+.albumButton {
+    display: inline-block;
+}
+
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
