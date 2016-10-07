@@ -1,7 +1,7 @@
 {% extends 'music/base.html' %}
 {% block title %}Song Detail{% endblock %}
 {% block body %}
-    <img src="{{ album.album_logo }}" style="width: 250px;">
+    <img src="{{ album.album_logo.url }}" style="width: 250px;">
 
     <h1>{{ album.album_title }}</h1>
     <h2>{{ album.artist }}</h2>
